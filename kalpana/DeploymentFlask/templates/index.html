@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+ 
+</head>
+<center>
+<body style="background-image:url('https://images.indianexpress.com/2020/02/liver1200getty.jpg'); background-repeat: no-repeat;  background-size: 1575px;">
+ <div class="login">
+	<h1>LIVER DISEASE PREDICTION</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+       <fieldset>
+            <legend align=center><h2>Info about patients</h2></legend>
+                 <table cellpadding=3 align=center border=2 cellspacing=3>
+                    <tr>
+                    <td>Enter Age : </td>
+                    <td><input type="text" name="Age" placeholder="Age" required="required" /></td>
+                    </tr><br>
+                    <tr>
+                    <td>Enter Gender (Female---> 0 Male---> 1) : </td>
+                    <td><input type="text" name="Gender" placeholder="Gender" required="required" /></td>
+                    </tr><br>
+                    <tr>
+                    <td>Enter Total Bilirubin Level : </td>
+                    <td><input type="text" name="Total_Bilirubin" placeholder="Total_Bilirubin" required="required" /></td>
+                    </tr><br>
+                    <tr>
+                    
+                   
+                    <tr>
+                    <tr>
+                    <td>Enter Alamine Aminotrasferase Level : </td>
+                    <td><input type="text" name="Alamine_Transferase" placeholder="Alamine_Trasferase" required="required" /></td>
+                    </tr><br>
+                   
+                    <tr>
+                    <td>Enter Total Protiens Level : </td>
+                    <td><input type="text" name="Total_Protiens" placeholder="Total_Protiens" required="required" /></td>
+                    </tr><br>
+                    <tr>
+                    <td>Enter Albumin Level : </td>
+                    <td><input type="text" name="Albumin" placeholder="Albumin" required="required" /></td>
+                    </tr><br>
+                    <tr>
+                    <td>Enter Albumin and Globulin Ratio Level : </td>
+                    <td><input type="text" name="Albumin_and_Globulin_Ratio" placeholder="Albumin_and_Globulin_Ratio" required="required" /></td>
+                    </tr><br>
+                    <tr>
+                    <td><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> </td>
+                    </tr>
+                  </table>
+        </fieldset>
+    </form>
+  {{ prediction_text }}
+  
+
+ </div>
+
+</center>
+</body>
+</html>
